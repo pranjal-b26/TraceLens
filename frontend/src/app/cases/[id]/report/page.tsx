@@ -21,10 +21,10 @@ export default function ReportView({ params }: { params: Promise<{ id: string }>
   const { id } = unwrappedParams;
   const [caseData, setCaseData] = useState<Record<string, any> | null>(null);
   const [loading, setLoading] = useState(true);
-  const [copied, setCopied] = useState(false);
+  const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
 
   useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/cases/${id}`)
+    fetch(`${API_BASE}/api/cases/${id}`)
       .then((res) => res.json())
       .then((data) => setCaseData(data))
       .catch(() => { })

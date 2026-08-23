@@ -30,9 +30,11 @@ export default function CaseView({ params }: { params: Promise<{ id: string }> }
   const [uploading, setUploading] = useState(false);
   const [analyzing, setAnalyzing] = useState(false);
 
+  const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+
   const fetchCase = async (caseId: string) => {
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/cases/${caseId}`);
+      const res = await fetch(`${API_BASE}/api/cases/${caseId}`);
       if (res.ok) {
         const data = await res.json();
         setCaseData(data);
@@ -72,7 +74,7 @@ export default function CaseView({ params }: { params: Promise<{ id: string }> }
     }
 
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}${endpoint}`, {
+      const res = await fetch(`${API_BASE}${endpoint}`, {
         method: "POST",
         body: formData,
       });
@@ -91,7 +93,7 @@ export default function CaseView({ params }: { params: Promise<{ id: string }> }
   const handleAnalyze = async () => {
     setAnalyzing(true);
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/cases/${id}/analyze`, {
+      const res = await fetch(`${API_BASE}/api/cases/${id}/analyze`, {
         method: "POST"
       });
       if (res.ok) {

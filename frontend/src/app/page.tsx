@@ -32,10 +32,12 @@ export default function Home() {
     { title: "Credential Harvester Landing Page", desc: "Phishing portal requesting 2FA security codes" }
   ];
 
+  const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+
   const fetchCases = async () => {
     setFetching(true);
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/cases`);
+      const res = await fetch(`${API_BASE}/api/cases`);
       if (res.ok) {
         const data = await res.json();
         setCases(data);
@@ -56,7 +58,7 @@ export default function Home() {
     if (!finalTitle.trim()) return;
     setLoading(true);
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/cases`, {
+      const res = await fetch(`${API_BASE}/api/cases`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ title: finalTitle }),
