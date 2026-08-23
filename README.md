@@ -4,7 +4,6 @@
 [![Next.js](https://img.shields.io/badge/Frontend-Next.js%2016-000000?style=flat-square&logo=next.js)](https://nextjs.org/)
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat-square&logo=python)](https://python.org)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-3178C6?style=flat-square&logo=typescript)](https://typescriptlang.org)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
 
 > **TraceLens** is an intelligent cybersecurity investigation assistant that ingests multi-source digital evidence (URLs, emails, PDFs, logs, images), extracts indicators, correlates findings across artifacts, reconstructs cyber incident timelines, and calculates explainable risk scores with remediation guidance.
 
@@ -140,8 +139,3 @@ TraceLens/
 
 For full architectural blueprints, detailed indicator rules, risk calculation formulas, and module breakdowns, refer to [TraceLens Project Specification](TraceLens_Project_Specification.md).
 
----
-
-## 📝 License
-
-Distributed under the MIT License. See `LICENSE` for details.
